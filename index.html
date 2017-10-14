@@ -1,17 +1,30 @@
 <!DOCTYPE html>
   <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
 integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" href="css/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js" type="text/javascript"></script>
+<script src="js/places.js" type="text/javascript"></script>
+<script src="js/app.js" type="text/javascript"></script>
 </head>
-  <body>
-<section class="col-sm-3 col-sm-offset-1 blog-sidebar">
-  <input class="form-control"></input>
+  <body class="row">
+<section class="col-sm-3 blog-sidebar">
+  <input class="form-control" id="search_input"></input>
+  <hr>
+  <h2> My Favorite places</h2>
+  <ul id="places_list" data-bind="foreach: location">
+    <li data-bind="text: name">
+    </li>
+  </ul>
 </section>
-<div class="container">
-  <canvas></canvas>
+<div class="col-sm-9 container">
+  <div id="map" class="map-area" data-bind="text: map"></div>
 </div>
+<script async defer
+   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdCVFYYrUI2DF5ALAqY6xsSsX9uleSX6E&callback=initMap">
+   </script>
 
   </body>
   </html>
