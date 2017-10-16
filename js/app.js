@@ -1,24 +1,30 @@
-var map;
-var uluru ;
-var initMap =function () {
-uluru = {lat: 24.7366, lng: 46.6803};
-map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 13,
-          center: uluru
-        });
+function viewModel  (){
+  var self = this;
+  this.locations = ko.observableArray(places);
 
-        markers();
+  this.filter = ko.observable('');
+
+  this.filterdLocations = ko.computed(function () {
+    var filter = this.filter().toLowerCase();
+    if (!filter) {
+      return self.locations();
+    }
+    else {
+      return ko.utils.arrayFilter(self.locations(),function (location) {
+        if(location.name.toLowerCase().indexOf(filter) !== -1)
+        return location;
+      })
+
+    }
+
+  }, this);
+
+  this.pins =[];
+  places.forEach( function (location) {
+    self.pins.push= location.cords;
+
+  });
+  console.log(self.pins);
 }
-var markers = function () {
-  var marker = new google.maps.Marker({
- position: uluru,
- map: map
-});
-}
 
-var viewModel = function (){
-
-var location = places;
-}
-
-viewModel();
+ko.applyBindings( new viewModel());
