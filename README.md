@@ -4,8 +4,8 @@ this project is build using [Knockout](http://knockoutjs.com/ "knockout")  js fr
 ## Component  
 
 1. places.js contain the following
-⋅⋅1. foursquare api clientId & clientSecret values which related to my account
-⋅⋅2. array of my favs places
+..1. foursquare api clientId & clientSecret values which related to my account
+..2. array of my favs places
 ⋅⋅3. places menu slider function.
 
 2. map.js contain the following
