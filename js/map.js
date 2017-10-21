@@ -10,10 +10,10 @@ map = new google.maps.Map(document.getElementById('map'), {
 
 places.forEach(function(place) {
   addMarker(place);
-})
+});
 
 
-}
+};
  var addMarker = function (place) {
 
      var length = markers.push(new google.maps.Marker({
@@ -30,4 +30,4 @@ places.forEach(function(place) {
           content: this.getPosition() + " "
         }).open(map, this);
  });
-}
+};

@@ -2,10 +2,10 @@ function viewModel  (){
   var self = this;
   this.locations = ko.observableArray(places);
 
-// filter input
+  // filter input
   this.filter = ko.observable('');
 
-//filter function
+  //filter function
   this.filterdLocations = ko.computed(function () {
     var filter = this.filter().toLowerCase();
 
@@ -18,10 +18,10 @@ function viewModel  (){
       return ko.utils.arrayFilter(self.locations(),function (location,i) {
         if(location.name.toLowerCase().indexOf(filter) !== -1){
           markers[i].setVisible(true);
-         return location;
-      }
+          return location;
+        }
         markers[i].setVisible(false);
-      })
+      });
 
     }
 
