@@ -8,6 +8,9 @@ map = new google.maps.Map(document.getElementById('map'), {
           center: uluru
         });
 
+places.forEach(function(place) {
+  addMarker(place);
+})
 
 
 }
@@ -18,6 +21,7 @@ map = new google.maps.Map(document.getElementById('map'), {
      map: map
    }
  ));
+
  markers[length-1].addListener('click', function() {
    console.log(this.getPosition());
    this.setAnimation(google.maps.Animation.BOUNCE);
@@ -27,12 +31,3 @@ map = new google.maps.Map(document.getElementById('map'), {
         }).open(map, this);
  });
 }
-
-
-
-// var clearMarkers = function() {
-//   for (var i = 0; i < markers.length; i++) {
-//             markers[i].setMap(null);
-//         }
-//     markers = [];
-// }

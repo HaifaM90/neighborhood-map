@@ -11,32 +11,22 @@ function viewModel  (){
 
     //if no filter valure return all
     if (!filter) {
-      // ko.utils.arrayForEach(self.locations(), function(location) {
-      //   addMarker(location);
-      // },this);
       return self.locations();
     }
     else {
       //compare filter input with location list
-      return ko.utils.arrayFilter(self.locations(),function (location) {
+      return ko.utils.arrayFilter(self.locations(),function (location,i) {
         if(location.name.toLowerCase().indexOf(filter) !== -1){
-          addMarker(location);
-        return location;
+          markers[i].setVisible(true);
+         return location;
       }
+        markers[i].setVisible(false);
       })
 
     }
 
 
   }, this);
-
-  //click for more info.
-this.moreInfo= ko.computed( function(){
-///get info from ajax
-
-//display popup
-
-});
 
 }
 
