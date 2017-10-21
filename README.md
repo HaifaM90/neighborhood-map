@@ -4,9 +4,9 @@ this project is build using [Knockout](http://knockoutjs.com/ "knockout")  js fr
 ## Component  
 
 1. places.js contain the following
-  1.1. foursquare api clientId & clientSecret values which related to my account
-  1.2. array of my favs places
-  1.3. places menu slider function.
+  1. foursquare api clientId & clientSecret values which related to my account
+  2. array of my favs places
+  3. places menu slider function.
 
 2. map.js contain the following
   1. initMap function to draw our map.
@@ -16,3 +16,8 @@ this project is build using [Knockout](http://knockoutjs.com/ "knockout")  js fr
 3. app.js , it's the ModelView of Knockout and contain the following
   1.  observable array of locations
   2. computed function for filtering
+
+## HOW TO LAUNCH
+
+1. double click on *index.html* to open it with your default browser
+2. OR drag *index.html * file and drop it over the browser icon
