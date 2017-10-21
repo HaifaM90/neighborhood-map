@@ -23,11 +23,33 @@ places.forEach(function(place) {
  ));
 
  markers[length-1].addListener('click', function() {
-   console.log(this.getPosition());
-   this.setAnimation(google.maps.Animation.BOUNCE);
+   if (this.getAnimation() !== null)
+   {
+     this.setAnimation(null);
+   }
+   else
+   {
+     this.setAnimation(google.maps.Animation.BOUNCE);
+   }
+
    //getInformation from ajex
+   var info = getMoreInfo(place.id);
    new google.maps.InfoWindow({
-          content: this.getPosition() + " "
+          content: '<h4>'+info.venue.name+'</h4> '
+          +'<strong>Categories:</strong> '+ info.venue.categories[0].name
+          +'<br><strong>Rating:</strong> ' + info.venue.rating
         }).open(map, this);
  });
 };
+
+var getMoreInfo = function (id) {
+  $.ajax('https://api.foursquare.com/v2/venues/'+id+'&client_id='+clientId+'&client_secret='+clientSecret,
+  {
+        success: function(data) {
+           return data;
+        },
+        error: function() {
+          console.log("ERROR!");
+        }
+     });
+}

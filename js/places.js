@@ -57,3 +57,7 @@ var places = [{
     }
 }
 ];
+
+$('.menu-icon-link').on('click', function() {
+        $('body').toggleClass('hidden-part');
+    });
