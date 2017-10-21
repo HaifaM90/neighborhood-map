@@ -10,7 +10,7 @@ body{
 .slider-link {
   background-color: #4a8187;
 }
- .slider {
+.slider {
   background-color: #4a8187;
   height: 100vh;
   position: absolute;
@@ -19,8 +19,8 @@ body{
 }
 
 .hidden-part .slider{
-    transform: translate3d(-30em, 0, 0);
-    transition: transform 0.2s;
+  transform: translate3d(-30em, 0, 0);
+  transition: transform 0.2s;
 }
 .menu-icon-link {
   color: #fcfbef;
@@ -31,23 +31,32 @@ body{
   color: #fcfbef;
 }
 .menu-icon-link:hover {
-color: #e59462;
+  color: #e59462;
 }
 
 h2 {
   color: #fcfbef;
 }
-li {
+li a {
   color: #e59462;
+  text-decoration: none;
+}
+li a:visited {
+  color: #e59462;
+  text-decoration: none;
+}
+li a:hover{
+  color: #fcfbef;
+  text-decoration: none;
 }
 input {
   color: #e56419;
 }
 ul , h2, input{
-    margin: 2% ;
+  margin: 2% ;
 }
 ul {
-list-style: none;
+  list-style: none;
 }
 .map-area{
   height: 100vh;

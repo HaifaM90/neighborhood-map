@@ -31,25 +31,23 @@ places.forEach(function(place) {
    {
      this.setAnimation(google.maps.Animation.BOUNCE);
    }
+   getMoreInfo(place.id , this);
 
-   //getInformation from ajex
-   var info = getMoreInfo(place.id);
-   new google.maps.InfoWindow({
-          content: '<h4>'+info.venue.name+'</h4> '
-          +'<strong>Categories:</strong> '+ info.venue.categories[0].name
-          +'<br><strong>Rating:</strong> ' + info.venue.rating
-        }).open(map, this);
  });
 };
 
-var getMoreInfo = function (id) {
-  $.ajax('https://api.foursquare.com/v2/venues/'+id+'&client_id='+clientId+'&client_secret='+clientSecret,
+var getMoreInfo = function (id, marker) {
+  $.ajax('https://api.foursquare.com/v2/venues/'+id+'?v=20170101&client_id='+clientId+'&client_secret='+clientSecret,
   {
         success: function(data) {
-           return data;
+        var info=  data.response.venue;
+        new google.maps.InfoWindow({
+               content: '<h4>'+info.name+'</h4> '+'<strong>Categories:</strong> '+ info.categories[0].name+'<br><strong>Rating:</strong> ' + info.rating
+             }).open(map, marker);
+
         },
         error: function() {
           console.log("ERROR!");
         }
      });
-}
+   };

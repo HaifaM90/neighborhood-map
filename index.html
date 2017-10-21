@@ -11,20 +11,21 @@
 </head>
 <body class=" row hidden-part">
   <div class="slider-link">
-            <a href="#" class="menu-icon-link">
-                <i class="fa fa-bars" aria-hidden="true"></i>
-            </a>
+    <a href="#" class="menu-icon-link">
+      <i class="fa fa-bars" aria-hidden="true"></i>
+    </a>
   </div>
   <section class="col-sm-3 blog-sidebar">
     <div class="col-sm-12 slider">
-    <input class="form-control" id="search_input" data-bind="textInput: filter" placeholder=" Looking for place? "></input>
-    <hr>
-    <h2> My Favorite places</h2>
-    <ul id="places_list" data-bind="foreach: filterdLocations">
-      <li data-bind="text: name ">
-      </li>
-    </ul>
-  </div>
+      <input class="form-control" id="search_input" data-bind="textInput: filter" placeholder=" Looking for place? "></input>
+      <hr>
+      <h2> My Favorite places</h2>
+      <ul id="places_list" data-bind="foreach: filterdLocations">
+        <li>
+          <a href="#" data-bind="text: name" ></a>
+        </li>
+      </ul>
+    </div>
 
   </section>
 

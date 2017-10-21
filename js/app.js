@@ -1,12 +1,11 @@
 function viewModel  (){
   var self = this;
-  this.locations = ko.observableArray(places);
-
+  self.locations = ko.observableArray(places);
   // filter input
-  this.filter = ko.observable('');
+  self.filter = ko.observable('');
 
   //filter function
-  this.filterdLocations = ko.computed(function () {
+  self.filterdLocations = ko.computed(function () {
     var filter = this.filter().toLowerCase();
 
     //if no filter valure return all
@@ -24,8 +23,7 @@ function viewModel  (){
       });
 
     }
-
-
+    
   }, this);
 
 }
