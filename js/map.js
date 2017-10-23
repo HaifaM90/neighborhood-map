@@ -1,6 +1,5 @@
 var map;
 var uluru ;
-var markers =[] ;
 var initMap =function () {
 uluru = {lat: 24.7366, lng: 46.6803};
 map = new google.maps.Map(document.getElementById('map'), {
@@ -8,32 +7,28 @@ map = new google.maps.Map(document.getElementById('map'), {
           center: uluru
         });
 
-places.forEach(function(place) {
+ places =places.forEach(function(place) {
   addMarker(place);
 });
-
 
 };
  var addMarker = function (place) {
 
-     var length = markers.push(new google.maps.Marker({
+     var marker = new google.maps.Marker({
      position:place.cords,
      map: map
    }
- ));
+ );
 
- markers[length-1].addListener('click', function() {
-   if (this.getAnimation() !== null)
-   {
-     this.setAnimation(null);
-   }
-   else
-   {
+marker.addListener('click', function() {
+
      this.setAnimation(google.maps.Animation.BOUNCE);
-   }
+
    getMoreInfo(place.id , this);
 
  });
+
+ place.marker = marker;
 };
 
 var getMoreInfo = function (id, marker) {
@@ -42,7 +37,8 @@ var getMoreInfo = function (id, marker) {
         success: function(data) {
         var info=  data.response.venue;
         new google.maps.InfoWindow({
-               content: '<h4>'+info.name+'</h4> '+'<strong>Categories:</strong> '+ info.categories[0].name+'<br><strong>Rating:</strong> ' + info.rating
+               content: '<h4>'+info.name+'</h4> '+'<strong>Categories:</strong> '+ info.categories[0].name+'<br><strong>Rating:</strong> '
+                + (info.rating?info.rating: ' ')
              }).open(map, marker);
 
         },

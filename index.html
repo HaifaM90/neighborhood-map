@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <title> Neighborhood Map</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
   integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js" type="text/javascript"></script>
-
 </head>
 <body class=" row hidden-part">
   <div class="slider-link">
@@ -17,7 +16,7 @@
   </div>
   <section class="col-sm-3 blog-sidebar">
     <div class="col-sm-12 slider">
-      <input class="form-control" id="search_input" data-bind="textInput: filter" placeholder=" Looking for place? "></input>
+      <input class="form-control" id="search_input" data-bind="textInput: filter" placeholder=" Looking for place? ">
       <hr>
       <h2> My Favorite places</h2>
       <ul id="places_list" data-bind="foreach: filterdLocations">
@@ -32,17 +31,17 @@
   <div>
     <div id="map" class="map-area"></div>
   </div>
-  <script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdCVFYYrUI2DF5ALAqY6xsSsX9uleSX6E&callback=initMap">
-  </script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js" type="text/javascript"></script>
   <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
   <script src="js/places.js" type="text/javascript"></script>
-  <script src="js/app.js" type="text/javascript"></script>
   <script src="js/map.js" type="text/javascript"></script>
+  <script src="js/app.js" type="text/javascript"></script>
   <script src="https://use.fontawesome.com/17d58a1d96.js"></script>
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdCVFYYrUI2DF5ALAqY6xsSsX9uleSX6E&callback=initMap">
+  </script>
 </body>
 </html>

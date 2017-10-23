@@ -9,7 +9,8 @@ var places = [{
   cords: {
     lat: 24.771426,
     lng: 46.668536
-  }
+  },
+  marker: null
 },
 {
   // 2ed
@@ -18,7 +19,8 @@ var places = [{
   cords: {
     lat: 24.790296,
     lng: 46.6586259
-  }
+  },
+  marker: null
 } ,
 {
   // 3ed
@@ -27,7 +29,8 @@ var places = [{
   cords: {
     lat: 24.773690,
     lng: 46.666970
-  }
+  },
+  marker: null
 },
 {
   // 4th
@@ -36,7 +39,8 @@ var places = [{
   cords: {
     lat: 24.746051,
     lng: 46.660231
-  }
+  },
+  marker: null
 } ,
 {
   // 5th
@@ -45,7 +49,8 @@ var places = [{
   cords: {
     lat: 24.708144,
     lng: 46.678583
-  }
+  },
+  marker: null
 },
 {
   // 6th
@@ -54,7 +59,8 @@ var places = [{
   cords: {
     lat: 24.736227,
     lng: 46.694924
-  }
+  },
+  marker: null
 }
 ];
 
