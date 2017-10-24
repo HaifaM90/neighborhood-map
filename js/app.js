@@ -25,7 +25,7 @@ function ViewModel  (){
   //trigger marker function
   self.triggerMarker = function(location) {
     google.maps.event.trigger(location.marker, 'click');
-  }
+  };
 }
 
 
