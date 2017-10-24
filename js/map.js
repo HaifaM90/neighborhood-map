@@ -48,3 +48,7 @@ var getMoreInfo = function (id, marker) {
         }
      });
    };
+
+var fallBack = function() {
+       $('.message').html('There is somthing wents wrong try again later');
+   };

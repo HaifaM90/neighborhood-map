@@ -23,7 +23,7 @@
       <hr>
       <h2> My Favorite places</h2>
       <ul id="places_list" data-bind="foreach: filterdLocations">
-        <li>
+       <li data-bind="click: $parent.triggerMarker">
           <a href="#" data-bind="text: name" ></a>
         </li>
       </ul>
