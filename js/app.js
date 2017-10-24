@@ -1,5 +1,5 @@
 
-function viewModel  (){
+function ViewModel  (){
   var self = this;
   self.locations = ko.observableArray(places);
   // filter input
@@ -9,7 +9,6 @@ function viewModel  (){
   self.filterdLocations = ko.computed(function () {
     var filter = this.filter().toLowerCase();
       return ko.utils.arrayFilter(self.locations(),function (location,i) {
-        //console.log(location.marker);
         if(location.name.toLowerCase().indexOf(filter) !== -1){
        location.marker.setVisible(true);
           return location;
@@ -21,4 +20,4 @@ function viewModel  (){
 
 }
 
-ko.applyBindings( new viewModel());
+ko.applyBindings( new ViewModel());

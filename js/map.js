@@ -36,6 +36,7 @@ var getMoreInfo = function (id, marker) {
   {
         success: function(data) {
         var info=  data.response.venue;
+          $('.message').html(' ');
         new google.maps.InfoWindow({
                content: '<h4>'+info.name+'</h4> '+'<strong>Categories:</strong> '+ info.categories[0].name+'<br><strong>Rating:</strong> '
                 + (info.rating?info.rating: ' ')
@@ -43,7 +44,7 @@ var getMoreInfo = function (id, marker) {
 
         },
         error: function() {
-          console.log("ERROR!");
+          $('.message').html('There is somthing wents wrong try again later');
         }
      });
    };
