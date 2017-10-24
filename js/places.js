@@ -67,3 +67,7 @@ var places = [{
 $('.menu-icon-link').on('click', function() {
   $('body').toggleClass('hidden-part');
 });
+
+var fallBack = function() {
+    $('.message').html('There is somthing wents wrong try again later');
+};
